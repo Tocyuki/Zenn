@@ -1,13 +1,15 @@
 .PHONY: $(shell egrep -o ^[a-zA-Z_-]+: $(MAKEFILE_LIST) | sed 's/://')
 
 help: ## Print this help
-	@echo "Usage: make [target] (module=[terraform module name])"
+	@echo "Usage: make {build|init|preview|article|book}"
 	@echo
 	@echo 'Targets:'
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
-init: ## exec docker-compose build & npx zenn init
+build: ## exec docker-compose build
 	@docker-compose build
+
+init: build ## exec docker-compose build & npx zenn init
 	@docker-compose run --rm npx zenn init
 
 preview: ## exec npx zenn preview
