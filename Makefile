@@ -20,3 +20,6 @@ article: ## exec npx zenn new:article
 
 book: ## exec npx zenn new:book
 	@docker-compose run --rm npx zenn new:book
+
+textlint: ## exec npx textlint articles/*.md
+	@docker-compose run --rm npx textlint articles/*.md

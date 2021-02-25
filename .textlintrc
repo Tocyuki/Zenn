@@ -1,0 +1,10 @@
+{
+  "filters": {},
+  "rules": {
+    "preset-ja-technical-writing": true,
+    "no-dropping-the-ra": true,
+    "no-mix-dearu-desumasu": true,
+    "textlint-rule-spellcheck-tech-word": true,
+    "textlint-filter-rule-comments": true
+  }
+}
