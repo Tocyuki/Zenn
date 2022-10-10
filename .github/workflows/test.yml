@@ -1,0 +1,19 @@
+name: check textlint
+
+on:
+  pull_request:
+
+jobs:
+  textlint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: docker build
+        run: make build
+
+      - name: run textlint
+        run: make textlint
