@@ -1,7 +1,7 @@
 .PHONY: $(shell egrep -o ^[a-zA-Z_-]+: $(MAKEFILE_LIST) | sed 's/://')
 
 help: ## Print this help
-	@echo "Usage: make {build|init|preview|article|book}"
+	@echo "Usage: make {build|init|preview|article|book|textlint}"
 	@echo
 	@echo 'Targets:'
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
@@ -22,4 +22,4 @@ book: ## exec npx zenn new:book
 	@docker-compose run --rm npx zenn new:book
 
 textlint: ## exec npx textlint articles/*.md
-	@docker-compose run --rm npx textlint articles/*.md
+	@docker-compose run --rm npx textlint articles/*.md books/*.md
