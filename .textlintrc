@@ -1,7 +1,20 @@
 {
   "filters": {},
   "rules": {
-    "preset-ja-technical-writing": true,
+    "preset-ja-technical-writing": {
+      // 初期設定の100文字制限だと窮屈そうだったので150文字制限に拡張
+      "sentence-length": {
+        "max": 150
+      },
+      // テックブログはお堅い文書ではないので感嘆符（！、？）を許可
+      "no-exclamation-question-mark": false,
+      // 「かも」とか「思います」のような歯切れの悪い表現を許可
+      "ja-no-weak-phrase": false,
+      // 「あるある」とか「つよつよ」のようなスラングのために単語の連続を許可
+      "ja-no-successive-word": false,
+      // zenn の Markdown 方言である :::message および :::details と相性が悪いため無効化
+      "ja-no-mixed-period": false
+    },
     "no-dropping-the-ra": true,
     "no-mix-dearu-desumasu": true,
     "textlint-rule-spellcheck-tech-word": true,
