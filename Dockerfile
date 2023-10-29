@@ -1,4 +1,4 @@
-FROM node:lts-alpine3.10
+FROM node:lts-alpine
 
 WORKDIR /contents
 ENV LC_ALL=ja_JP.UTF-8
