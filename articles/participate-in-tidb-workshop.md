@@ -8,7 +8,7 @@ publication_name: "aeonpeople"
 ---
 
 :::message alert
-本記事はワークショップ参加の報告記事であり、PingCap社の宣伝を意図したものではありません。また、PingCap社から商品や金品、その他経済的利益を授受しておりません。
+本記事はワークショップ参加の報告記事であり、PingCap社の宣伝を意図したものではありません。また、PingCap社から商品や金品、その他経済的利益を授受しておりません。ただしTシャツはもらいました。
 :::
 
 イオンスマートテクノロジー株式会社のCTO室でSREやってる[@Tocyuki](https://twitter.com/Tocyuki)です！
