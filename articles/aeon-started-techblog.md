@@ -3,7 +3,7 @@ title: "AEONテックブログはじめるってよ"
 emoji: "🐥"
 type: "idea" # tech: 技術記事 / idea: アイデア
 topics: [ "techblog","SRE","AEON","DevRel" ]
-published: false
+published: true
 publication_name: "aeonpeople"
 ---
 
