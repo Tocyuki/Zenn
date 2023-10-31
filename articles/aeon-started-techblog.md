@@ -78,7 +78,7 @@ https://www.aeon.com/aeonapp/
 | DB       | MySQL, SQLServer                                    |
 | クラウドインフラ | Azure, Google Cloud                                 |
 | インフラ基盤   | Azure Kubernetes Service, Azure App Service         |
-| シークレット管理 | HashiCorp Vault                                     |
+| シークレット管理 | HCP Vault                                           |
 | IaC      | Terraform, Bicep, Ansible                           |
 | Git      | AzureRepos, GitHub EMU(移行中)                         |
 | CI/CD    | AzurePipeline, Terraform Cloud, GitHub Actions(移行中) |
