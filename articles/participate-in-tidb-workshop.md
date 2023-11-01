@@ -17,7 +17,7 @@ publication_name: "aeonpeople"
 
 @[tweet](https://twitter.com/Tocyuki/status/1681298518965899264)
 
-入社前から気になってました！！！（マジ）
+入社前から気になってました!!!（マジ）
 
 # TiDBとは
 
