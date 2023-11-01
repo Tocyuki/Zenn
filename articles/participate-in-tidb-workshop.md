@@ -2,7 +2,7 @@
 title: "TiDBのスキルアップワークショップを受けてきた"
 emoji: "⛳"
 type: "tech" # tech: 技術記事 / idea: アイデア
-topics: ["TiDB", "NewSQL", "database", "PingCap", "AEON"]
+topics: ["TiDB", "NewSQL", "database", "PingCap", "AEON", "RDB"]
 published: true
 publication_name: "aeonpeople"
 ---
@@ -16,6 +16,8 @@ publication_name: "aeonpeople"
 先日、PingCap社主催の**TiDBエキスパートへの道：実践的な知識とPingCAP認定のスキルアップワークショップ**に参加して**入社前から気になっていた**TiDBに関する知見を深めて来たのでその感想を書き殴っていきたいと思います！
 
 @[tweet](https://twitter.com/Tocyuki/status/1681298518965899264)
+
+入社前から気になってました！！！（マジ）
 
 # TiDBとは
 
