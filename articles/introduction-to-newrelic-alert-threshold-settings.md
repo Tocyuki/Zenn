@@ -3,7 +3,7 @@ title: "New Relic Alert 閾値チューニング入門"
 emoji: "🆕"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["NewRelic","監視","運用"]
-published: false
+published: true
 publication_name: "aeonpeople"
 ---
 
@@ -19,7 +19,7 @@ publication_name: "aeonpeople"
 *ここをすべて理解して設定していると言えるのかい？*
 
 New RelicではAlertの閾値を以下のさまざまなパラメーターにより、きめ細かく柔軟に設定できます。
-正直そこまで理解できていなくても多くのユースケースではデフォルト設定で問題にならないですが、本記事では最低限抑えておくと良い部分を中心に説明していこうと思います！
+本記事ではそれぞれのパラメーターで最低限抑えておくと良い部分を中心に説明していこうと思います！
 
 - Threshold Type
   - Static
