@@ -49,21 +49,21 @@ Static/Anomalyがそれぞれどのようなパラメーター、ユースケー
 ## Static
 
 前述の通り**あらかじめ設定した静的な閾値の超過有無で判定**する設定ですが、グラフで見るとわかりやすいかと思います。
-画像の赤色の線を越える or 下回るとインシデントがオープンされます。
 
 ![](/images/introduction-to-newrelic-alert-threshold-settings/2.png)
+*赤い線が閾値で赤色の範囲が検知した箇所*
 
 ![](/images/introduction-to-newrelic-alert-threshold-settings/3.png)
-*設定画面はこんな感じで設定項目もシンプル*
+*こんな感じで設定項目もシンプル*
 
 ### 閾値超過の評価方法
 
 Threshold Type Staticの評価方法は以下の2通りです。
 
-| 評価方法                          | 説明                               |
-|-------------------------------|----------------------------------|
-| `for at least XX minutes`     | XX分間閾値を超過する状態が続いたらインシデントがオープンされる |
-| `at least once in XX minutes` | XX分間の間に1回でも超過したらインシデントがオープンされる   |
+| 評価方法                          | 説明                                |
+|-------------------------------|-----------------------------------|
+| `for at least XX minutes`     | XX分間閾値を超過する状態が続いたらインシデントがオープンされる  |
+| `at least once in XX minutes` | XX分間の間に1回でも閾値を超過したらインシデントがオープンされる |
 
 画像の例だと`When a query returns a value above 1 for at least 5 minutes`となっているので`クエリ結果の値が1以下でその状態が5分間継続`した場合にインシデントをオープンする設定になっています。
 
