@@ -245,6 +245,10 @@ https://docs.newrelic.com/jp/docs/alerts-applied-intelligence/new-relic-alerts/a
 
 https://newrelic.com/jp/blog/how-to-relic/understand-nrql-alert-condition
 
+# 追伸
+感謝賞いただきました🎉
+https://x.com/Tocyuki/status/1749348451090055306
+
 # 絶賛採用中です！
 
 イオンスマートテクノロジーではエンジニアをはじめとした様々な職種を積極的に採用中です！
