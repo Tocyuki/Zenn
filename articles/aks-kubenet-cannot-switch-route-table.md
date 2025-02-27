@@ -3,7 +3,7 @@ title: "Azure Kubernetes Service で kubenet を使っている場合、RouteTab
 emoji: "🐳"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["Azure", "Kubernetes", "AKS"]
-published: false
+published: true
 publication_name: "aeonpeople"
 ---
 
@@ -15,13 +15,13 @@ publication_name: "aeonpeople"
 
 
 # ことの発端
-そもそもなんでAKSでRouteTableを付け替えるというよくわからんことをしようとしたのかという背景について説明します。
+そもそもなんでAKSサブネットのRouteTableを切り替えるというよくわからんことをしようとしたのかという背景について説明します。
 
 御存知の通り(?)、弊社ではAzureリソースにスルメ系命名規則を採用しています。
 
 https://zenn.dev/aeonpeople/articles/0b4a4be83d0dfd
 
-最近別の作業をする中で命名規則に沿わない & Terraformでコード化されていないRouteTableリソースを発見しました。
+最近別の作業をする中で命名規則に沿わない & Terraformでコード化されていないAKSサブネットに紐づくRouteTableリソースを発見しました。
 
 Staging環境でもあったため、命名規則に沿った新しいRouteTableリソースをTerraformで作成して付け替えてしまおうと思ったのがことの発端でした。
 
@@ -30,11 +30,9 @@ Staging環境でもあったため、命名規則に沿った新しいRouteTable
 行った対応は以下です。
 
 1. 旧RouteTableのAKSサブネットとの関連付けを外し、削除する
-2. 新RouteTableをAKSサブネットへ関連付けする
+2. Terraformで新RouteTableを作成し、AKSサブネットへ関連付けする
 
 上記作業をしたタイミングで、新RouteTableにはAKSへのルート情報（`aks-default-**`から始まるもの）が存在しない状態だったため、通信がまったく出来ない状況になってしまいました。
-
-
 
 また、1. の作業で削除したはずの旧RouteTableリソースが復活するという不可解な事象も発生していました。
 
@@ -52,10 +50,12 @@ Staging環境でもあったため、命名規則に沿った新しいRouteTable
 
 
 # おわりに
-今回、Staging環境だったのでサクッとやってしまおうという油断もあり、以下の反省点がありました。
+今回、実現したかったRouteTableリソース名の変更をするにはAKSクラスターを再作成する必要があり、チーム内で協議した結果、今回の変更は見送ることにしました。
+
+また、今回の対応はStaging環境だったのでサクッとやってしまおうという油断もあり、以下の反省点がありました。
 
 - ドキュメントを読み込まなかった
-- 新RouteTableのルート情報の確認をしていなかった
+- 新RouteTableのAKSルート情報は自動生成されると思い込み、挙動含め確認が不足していた
 
 しかしながらこういった細かい仕様、挙動を理解出来る良い機会となり、チーム内でもポストモーテムを行い、知見を共有出来たので同じ轍を踏むことはないだろうということで終わり良ければ全て良し（？）
 
