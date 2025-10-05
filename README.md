@@ -1,5 +1,5 @@
-[![Likes](https://badgen.org/img/zenn/Tocyuki/likes?style=plastic)](https://zenn.dev/Tocyuki)
-[![Articles](https://badgen.org/img/zenn/Tocyuki/articles?style=plastic)](https://zenn.dev/Tocyuki)
+[![Likes](https://badgen.org/img/zenn/tocyuki/likes?style=plastic)](https://zenn.dev/tocyuki)
+[![Articles](https://badgen.org/img/zenn/tocyuki/articles?style=plastic)](https://zenn.dev/tocyuki)
 
 # Zenn Contents
 
