@@ -6,10 +6,10 @@ help: ## Print this help
 	@echo 'Targets:'
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
-build: ## exec docker-compose build
+build: ## exec docker compose build
 	@docker compose build
 
-init: build ## exec docker-compose build & npx zenn init
+init: build ## exec docker compose build & npx zenn init
 	@docker compose run --rm npx zenn init
 
 preview: ## exec npx zenn preview
