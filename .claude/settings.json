@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "pathMatcher": "**/*.md",
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/textlint.sh"
+          }
+        ]
+      }
+    ]
+  }
+}
