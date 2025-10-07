@@ -1,5 +1,7 @@
 {
-  "filters": {},
+  "filters": {
+    "comments": true
+  },
   "rules": {
     "preset-ja-technical-writing": {
       // 初期設定の100文字制限だと窮屈そうだったので150文字制限に拡張
@@ -13,11 +15,45 @@
       // 「あるある」とか「つよつよ」のようなスラングのために単語の連続を許可
       "ja-no-successive-word": false,
       // zenn の Markdown 方言である :::message および :::details と相性が悪いため無効化
-      "ja-no-mixed-period": false
+      "ja-no-mixed-period": false,
+      // コードブロックやインラインコード内の二重否定を許可
+      "no-double-negative-ja": true,
+      // 同じ接続詞の連続使用を検出
+      "max-ten": {
+        "max": 3
+      },
+      // 連続した句読点を検出
+      "no-doubled-joshi": {
+        "strict": false,
+        "allow": ["も", "や"]
+      }
     },
+    // 「ら抜き言葉」を検出（見れる → 見られる）
     "no-dropping-the-ra": true,
-    "no-mix-dearu-desumasu": true,
+    // 「ですます調」と「である調」の混在を検出
+    "no-mix-dearu-desumasu": {
+      "preferInHeader": "",
+      "preferInBody": "ですます",
+      "preferInList": "ですます"
+    },
+    // 技術用語のスペルチェック
     "textlint-rule-spellcheck-tech-word": true,
-    "textlint-filter-rule-comments": true
+    // コメント内のチェックをスキップ
+    "textlint-filter-rule-comments": true,
+    // 日本語と英語の間にスペースを入れる
+    "preset-ja-spacing": {
+      "ja-space-between-half-and-full-width": {
+        "space": "always"
+      },
+      // 括弧の前後のスペースルール（技術文書では柔軟に）
+      "ja-space-around-code": {
+        "before": true,
+        "after": true
+      }
+    },
+    // 冗長な表現を検出
+    "ja-no-redundant-expression": true,
+    // 不自然なアルファベットを検出
+    "ja-unnatural-alphabet": true
   }
 }
