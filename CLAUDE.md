@@ -55,6 +55,30 @@ When editing articles:
 - Must maintain consistent です/ます form (no mixing with だ/である form)
 - Tech terminology must be spelled correctly per textlint-rule-spellcheck-tech-word
 
+## MCP Server Integration
+
+This repository uses MCP (Model Context Protocol) servers to enhance content creation and verification:
+
+### DeepWiki MCP Server
+
+**IMPORTANT**: When creating or editing articles, you MUST verify technical facts using the deepwiki MCP server:
+- Verify all technical terminology, concepts, and claims against Wikipedia
+- Check version numbers, release dates, and historical facts
+- Validate technology names, framework details, and architectural concepts
+- Cross-reference any technical statements that could be outdated or incorrect
+- If information cannot be verified via Wikipedia, clearly note this limitation in your response
+
+### Context7 MCP Server
+
+**IMPORTANT**: Actively use the context7 MCP server throughout your work:
+- Store important context about the current article being worked on
+- Save research findings, reference materials, and technical details
+- Maintain conversation context across multiple editing sessions
+- Track TODOs, decisions, and rationale for content changes
+- Use it as a scratchpad for organizing complex technical explanations
+
+Both MCP servers should be used proactively and frequently to ensure accuracy and maintain context throughout the content creation process.
+
 ## CI/CD
 
 GitHub Actions runs textlint on all pull requests via `.github/workflows/test.yml` which executes `make build && make textlint`.
