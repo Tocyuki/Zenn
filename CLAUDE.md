@@ -55,6 +55,21 @@ When editing articles:
 - Must maintain consistent です/ます form (no mixing with だ/である form)
 - Tech terminology must be spelled correctly per textlint-rule-spellcheck-tech-word
 
+## AI Writing Guidelines
+
+When creating or editing content, follow these guidelines to ensure natural, human-like writing:
+
+- Do not include hallucinations (false information); write only accurate and verifiable facts
+- Avoid using outdated information; always update to the latest information
+- Avoid abstract or vague expressions; use specific wording that helps readers understand
+- Vary conjunctions and sentence endings to create natural text that doesn't become monotonous
+- Be mindful of sentence length and break up sentences appropriately
+- Avoid unnatural phrasing and AI-like pattern sentences; use natural Japanese
+- Thoroughly review to ensure there are no typos or omissions
+- Balance the ratio of kanji, hiragana, and katakana with readability in mind
+- Add supplementary explanations for difficult terms according to the reader's level
+- Avoid overusing vague or emphatic expressions like "should do" or "extremely important"
+
 ## MCP Server Integration
 
 This repository uses MCP (Model Context Protocol) servers to enhance content creation and verification:
