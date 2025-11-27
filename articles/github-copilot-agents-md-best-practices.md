@@ -15,7 +15,7 @@ publication_name: "studypocket"
 
 https://github.blog/changelog/2025-10-28-custom-agents-for-github-copilot/
 
-`.github/agents/` ディレクトリに agents.md ファイルを配置することで、カスタムエージェントを定義し、Issue に定義したカスタムエージェントをアサインできるようになっています。従来の汎用アシスタントではなく、バックエンド専用の `@backend-agent`、フロントエンド専用の `@frontend-agent`、SRE専用の `@sre-agent` など、専門性を持ったエージェントチームを構築できるのが最高に良いですね。
+`.github/agents/` ディレクトリに agents.md ファイルを配置することで、カスタムエージェントを定義し、Issue に定義したカスタムエージェントをアサインできるようになっています。従来の汎用アシスタントではなく、バックエンド専用の `@backend-specialist`、フロントエンド専用の `@frontend-specialist`、SRE専用の `@sre-specialist` など、専門性を持ったエージェントチームを構築できるのが最高に良いですね。
 
 https://docs.github.com/ja/copilot/how-tos/use-copilot-agents/coding-agent/create-custom-agents
 
@@ -36,9 +36,9 @@ agents.md は、GitHub Copilot のカスタムエージェントを定義する�
 
 .github/
 └── agents/
-    ├── backend-agent.md
-    ├── frontend-agent.md
-    └── sre-agent.md
+    ├── backend-specialist.agent.md
+    ├── frontend-specialist.agent.md
+    └── sre-specialist.agent.md
 ```
 
 リポジトリのルートに単一の `AGENTS.md` ファイルを配置しても OK です。プロジェクトの特定の部分にのみ適用したい場合は、該当ディレクトリにネストした `AGENTS.md` ファイルを配置することも可能です。
@@ -117,6 +117,44 @@ handoffs:
 | `agent` | 引き継ぎ先のエージェント名（ファイル名から `.agent.md` を除いた部分） |
 | `prompt` | 引き継ぎ時に渡すプロンプト |
 | `send` | `true` の場合、ユーザーの確認なしに自動的に引き継ぎを実行 |
+
+### MCP サーバーの設定
+
+カスタムエージェントは MCP（Model Context Protocol）サーバーのツールを利用できます。
+
+**リポジトリレベルのエージェント**では、エージェントプロファイル内で直接 MCP サーバーを設定できません。リポジトリ設定で設定した MCP サーバーのツールを `tools` プロパティで指定して使用します。
+
+https://docs.github.com/ja/copilot/how-tos/use-copilot-agents/coding-agent/extend-coding-agent-with-mcp
+
+```yaml
+# リポジトリ設定で構成した MCP サーバーのツールを使用
+tools: ["read", "edit", "custom-mcp/tool-1", "custom-mcp/*"]
+```
+
+**組織/エンタープライズレベルのエージェント**では、`mcp-servers` プロパティで直接設定できます。
+
+```yaml
+---
+name: my-custom-agent-with-mcp
+description: MCP サーバーを使用するカスタムエージェント
+tools: ['read', 'edit', 'custom-mcp/tool-1']
+mcp-servers:
+  custom-mcp:
+    type: 'local'
+    command: 'some-command'
+    args: ['--arg1', '--arg2']
+    env:
+      API_KEY: ${{ secrets.API_KEY }}
+---
+```
+
+また、GitHub.com のコーディングエージェントでは以下の MCP サーバーがデフォルトで利用可能です。
+
+| MCP サーバー | 説明 |
+|-------------|------|
+| `github` | GitHub API の読み取り専用ツール。`github/*` で全ツール、`github/get_issue` のように個別指定も可能 |
+| `playwright` | ブラウザ自動化ツール（localhost のみアクセス可能）。`playwright/*` で全ツール利用可能 |
+
 
 ## 優れた agents.md に必要な 6 つの要素
 
@@ -286,7 +324,7 @@ description: テストを書くエージェント
 
 というわけで、 GitHub の分析結果から効果的な agents.md を作成するためのポイントをまとめてみました。
 
-そして、カスタムエージェントを使う利点の一つは **Issue にアサインして並列実装ができること** です。複数の Issue にカスタムエージェントをアサインすることで、同時に複数の開発タスクをクラウド上で進められます。
+そして、カスタムエージェントを使う利点の一つは **Issue にアサインして並列実装ができること** です。複数の Issue に適切なカスタムエージェントをアサインすることで、同時に複数の開発タスクを効率的にクラウド上で進められます。
 
 https://x.com/Tocyuki/status/1990681272231018741
 
