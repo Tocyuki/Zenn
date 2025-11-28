@@ -25,9 +25,8 @@ https://github.blog/ai-and-ml/github-copilot/how-to-write-a-great-agents-md-less
 
 ## agents.md とは
 
-https://agents.md/
-
-agents.md は、GitHub Copilot のカスタムエージェントを定義するための設定ファイルです。エージェントのペルソナ、対応する技術スタック、プロジェクト構造、ワークフロー、実行可能なコマンド、コードスタイルの例、そして「やってはいけないこと」の境界線などを定義できます。
+ここで言う agents.md は、GitHub Copilot のカスタムエージェントを定義するための設定ファイルで、 `.github/agents/` 配下にファイルを配置します。
+エージェントのペルソナ、対応する技術スタック、プロジェクト構造、ワークフロー、実行可能なコマンド、コードスタイルの例、そして「やってはいけないこと」の境界線などを定義できます。
 
 
 
@@ -41,7 +40,11 @@ agents.md は、GitHub Copilot のカスタムエージェントを定義する�
     └── sre-specialist.agent.md
 ```
 
-リポジトリのルートに単一の `AGENTS.md` ファイルを配置しても OK です。プロジェクトの特定の部分にのみ適用したい場合は、該当ディレクトリにネストした `AGENTS.md` ファイルを配置することも可能です。
+リポジトリのルートに単一の `AGENTS.md` ファイルを配置しても GitHub Copilot は解釈できるので OK です。プロジェクトの特定の部分にのみ適用したい場合は、該当ディレクトリにネストした `AGENTS.md` ファイルを配置することも可能です。
+
+https://agents.md/
+
+https://github.blog/changelog/2025-08-28-copilot-coding-agent-now-supports-agents-md-custom-instructions/
 
 ## YAML フロントマターの設定項目
 
