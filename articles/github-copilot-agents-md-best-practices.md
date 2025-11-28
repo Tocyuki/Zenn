@@ -42,10 +42,10 @@ https://github.blog/ai-and-ml/github-copilot/how-to-write-a-great-agents-md-less
 
 
 :::message
-prompt の max length は30000文字なのでそれを超えるとカスタムエージェントが利用できなくなるので注意しましょう。
+prompt の max length は30000文字なので注意しましょう。
+![prompt exceeds max length of 30000 エラー](/images/github-copilot-agents-md-best-practices/prompt-max-length-error.png)
 :::
 
-![prompt exceeds max length of 30000 エラー](/images/github-copilot-agents-md-best-practices/prompt-max-length-error.png)
 
 リポジトリのルートに単一の `AGENTS.md` ファイルを配置しても GitHub Copilot は解釈できるので OK です。プロジェクトの特定の部分にのみ適用したい場合は、該当ディレクトリにネストした `AGENTS.md` ファイルを配置することも可能です。
 
